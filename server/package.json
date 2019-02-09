@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Brian De Maio",
@@ -23,7 +24,7 @@
     "express": "^4.16.4",
     "express-http-proxy": "1.0.6",
     "lodash": "^4.17.11",
-    "nodemon": "1.12.0",
+    "nodemon": "^1.18.10",
     "npm-run-all": "4.1.1",
     "react": "16.0.0",
     "react-dom": "16.0.0",
@@ -35,7 +36,7 @@
     "redux-thunk": "2.2.0",
     "serialize-javascript": "1.4.0",
     "webpack": "3.5.6",
-    "webpack-dev-server": "2.8.2",
+    "webpack-dev-server": "^3.1.14",
     "webpack-merge": "4.1.0",
     "webpack-node-externals": "1.6.0"
   }
