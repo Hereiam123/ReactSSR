@@ -236,6 +236,10 @@ var _reactRedux = __webpack_require__(11);
 
 var _reactRouterConfig = __webpack_require__(0);
 
+var _serializeJavascript = __webpack_require__(20);
+
+var _serializeJavascript2 = _interopRequireDefault(_serializeJavascript);
+
 var _Routes = __webpack_require__(1);
 
 var _Routes2 = _interopRequireDefault(_Routes);
@@ -256,7 +260,7 @@ exports.default = function (req, store) {
       )
     )
   ));
-  return "\n    <html>\n        <head></head>\n        <body>\n            <div id='root'>" + content + "</div>\n            <script>window.INITIAL_STATE=" + JSON.stringify(store.getState()) + "</script>\n            <script src='bundle.js'></script>\n        </body>\n    </html>\n  ";
+  return "\n    <html>\n        <head></head>\n        <body>\n            <div id='root'>" + content + "</div>\n            <script>window.INITIAL_STATE=" + (0, _serializeJavascript2.default)(store.getState()) + "</script>\n            <script src='bundle.js'></script>\n        </body>\n    </html>\n  ";
 };
 
 /***/ }),
@@ -519,6 +523,12 @@ var fetchUsers = exports.fetchUsers = function fetchUsers() {
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+module.exports = require("serialize-javascript");
 
 /***/ })
 /******/ ]);
