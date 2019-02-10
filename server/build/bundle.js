@@ -128,11 +128,13 @@ app.use(_express2.default.static("public"));
 app.get("*", function (req, res) {
   var store = (0, _createStore2.default)();
 
-  (0, _reactRouterConfig.matchRoutes)(_Routes2.default, req.path).map(function (_ref) {
+  var promises = (0, _reactRouterConfig.matchRoutes)(_Routes2.default, req.path).map(function (_ref) {
     var route = _ref.route;
 
-    route.loadData ? route.loadData() : null;
+    return route.loadData ? route.loadData(store) : null;
   });
+
+  console.log(promises);
 
   res.send((0, _renderer2.default)(req, store));
 });
@@ -364,8 +366,8 @@ var mapStateToProps = function mapStateToProps(state) {
   return { users: state.users };
 };
 
-var loadData = exports.loadData = function loadData() {
-  console.log("I'm trying to load soem data");
+var loadData = exports.loadData = function loadData(store) {
+  return store.dispatch((0, _actions.fetchUsers)());
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, { fetchUsers: _actions.fetchUsers })(UsersList);
