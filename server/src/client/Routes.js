@@ -9,6 +9,6 @@ export default [
   },
   {
     path: "/users",
-    componenet: UsersList
+    component: UsersList
   }
 ];
