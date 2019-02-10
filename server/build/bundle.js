@@ -27809,7 +27809,18 @@ var Home = function Home() {
   return _react2.default.createElement(
     "div",
     null,
-    "I'm home Charles!!!"
+    _react2.default.createElement(
+      "div",
+      null,
+      "I'm home Charles!!!"
+    ),
+    _react2.default.createElement(
+      "button",
+      { onClick: function onClick() {
+          return console.log("Hello there");
+        } },
+      "Press Me"
+    )
   );
 };
 
