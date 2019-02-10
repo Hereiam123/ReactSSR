@@ -2,7 +2,7 @@ const path = require("path");
 const merge = require("webpack-merge");
 const baseConfig = require("./webpack.base.js");
 
-module.exports = {
+const config = {
   //Bulding bundle for client
   entry: "./src/client/client.js",
   output: {
