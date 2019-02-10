@@ -1,2 +1,6 @@
-//Startup for clietn side
-console.log("Hello there");
+//Startup for client side
+import React from "react";
+import ReactDOM from "react-dom";
+import Home from "./components/Home";
+
+ReactDOM.render(<Home />, document.querySelector("#root"));

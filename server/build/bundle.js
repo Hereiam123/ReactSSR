@@ -8926,13 +8926,13 @@ var app = (0, _express2.default)();
 
 app.use(_express2.default.static("public"));
 app.get("/", function (req, res) {
-    var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
-    var html = "\n    <html>\n        <head>\n        </head>\n        <body>\n            <div>\n                " + content + "\n            </div>\n        <script src=\"bundle.js\"></script>\n        </body>\n    </html>\n  ";
-    res.send(html);
+  var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
+  var html = "\n    <html>\n        <head></head>\n        <body>\n            <div id=\"root\">\n                " + content + "\n            </div>\n            <script src=\"bundle.js\"></script>\n        </body>\n    </html>\n  ";
+  res.send(html);
 });
 
 app.listen(3000, function () {
-    console.log("Listening on 3000");
+  console.log("Listening on 3000");
 });
 
 /***/ }),

@@ -10,13 +10,12 @@ app.get("/", (req, res) => {
   const content = renderToString(<Home />);
   const html = `
     <html>
-        <head>
-        </head>
+        <head></head>
         <body>
-            <div>
+            <div id="root">
                 ${content}
             </div>
-        <script src="bundle.js"></script>
+            <script src="bundle.js"></script>
         </body>
     </html>
   `;
