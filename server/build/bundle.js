@@ -76,6 +76,8 @@ module.exports = require("react");
 "use strict";
 
 
+__webpack_require__(18);
+
 var _express = __webpack_require__(2);
 
 var _express2 = _interopRequireDefault(_express);
@@ -230,7 +232,7 @@ exports.default = function () {
     "div",
     null,
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/", component: _Home2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: "/users", component: _UsersList2.default })
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/users", component: _UsersList2.default })
   );
 };
 
@@ -480,6 +482,12 @@ var fetchUsers = exports.fetchUsers = function fetchUsers() {
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = require("babel-polyfill");
 
 /***/ })
 /******/ ]);
