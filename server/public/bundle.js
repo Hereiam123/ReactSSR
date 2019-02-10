@@ -37685,6 +37685,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _HomePage = __webpack_require__(454);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
@@ -37695,15 +37697,12 @@ var _UsersListPage2 = _interopRequireDefault(_UsersListPage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = [{
+exports.default = [_extends({}, _HomePage2.default, {
   path: "/",
-  component: _HomePage2.default,
   exact: true
-}, {
-  path: "/users",
-  component: _UsersListPage2.default,
-  loadData: _UsersListPage.loadData
-}];
+}), _extends({}, _UsersListPage2.default, {
+  path: "/users"
+})];
 
 /***/ }),
 /* 454 */
@@ -37722,7 +37721,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var HomePage = function HomePage() {
+var Home = function Home() {
   return _react2.default.createElement(
     "div",
     null,
@@ -37741,7 +37740,9 @@ var HomePage = function HomePage() {
   );
 };
 
-exports.default = HomePage;
+exports.default = {
+  component: Home
+};
 
 /***/ }),
 /* 455 */
@@ -38513,16 +38514,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var UsersListPage = function (_Component) {
-  _inherits(UsersListPage, _Component);
+var UsersList = function (_Component) {
+  _inherits(UsersList, _Component);
 
-  function UsersListPage() {
-    _classCallCheck(this, UsersListPage);
+  function UsersList() {
+    _classCallCheck(this, UsersList);
 
-    return _possibleConstructorReturn(this, (UsersListPage.__proto__ || Object.getPrototypeOf(UsersListPage)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (UsersList.__proto__ || Object.getPrototypeOf(UsersList)).apply(this, arguments));
   }
 
-  _createClass(UsersListPage, [{
+  _createClass(UsersList, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchUsers();
@@ -38554,7 +38555,7 @@ var UsersListPage = function (_Component) {
     }
   }]);
 
-  return UsersListPage;
+  return UsersList;
 }(_react.Component);
 
 var mapStateToProps = function mapStateToProps(state) {
@@ -38565,7 +38566,10 @@ var loadData = exports.loadData = function loadData(store) {
   return store.dispatch((0, _actions.fetchUsers)());
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, { fetchUsers: _actions.fetchUsers })(UsersListPage);
+exports.default = {
+  loadData: loadData,
+  component: (0, _reactRedux.connect)(mapStateToProps, { fetchUsers: _actions.fetchUsers })(UsersList)
+};
 
 /***/ }),
 /* 466 */
