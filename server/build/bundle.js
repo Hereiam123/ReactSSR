@@ -8906,14 +8906,26 @@ module.exports = memoizeStringOnly;
 "use strict";
 
 
-var express = __webpack_require__(68);
-var app = express();
-var React = __webpack_require__(26);
-var renderToString = __webpack_require__(147).renderToString;
-var Home = __webpack_require__(156).default;
+var _express = __webpack_require__(68);
+
+var _express2 = _interopRequireDefault(_express);
+
+var _react = __webpack_require__(26);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _server = __webpack_require__(147);
+
+var _Home = __webpack_require__(156);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var app = (0, _express2.default)();
 
 app.get("/", function (req, res) {
-  var content = renderToString(React.createElement(Home, null));
+  var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
 
   res.send(content);
 });
@@ -27797,7 +27809,7 @@ var Home = function Home() {
   return _react2.default.createElement(
     "div",
     null,
-    "I'm home!!!"
+    "I'm home Charles!!!"
   );
 };
 
