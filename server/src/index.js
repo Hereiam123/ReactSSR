@@ -8,7 +8,8 @@ import createStore from "./helpers/createStore";
 
 const app = express();
 
-//Options specific to this api, Google Oauth flow
+//Options specific to this api,
+//Google Oauth flow redirect back to localhost:3000
 app.use(
   "/api",
   proxy("http://react-ssr-api.herokuapp.com", {

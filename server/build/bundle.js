@@ -152,7 +152,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var app = (0, _express2.default)();
 
-//Options specific to this api, Google Oauth flow
+//Options specific to this api,
+//Google Oauth flow redirect back to localhost:3000
 app.use("/api", (0, _expressHttpProxy2.default)("http://react-ssr-api.herokuapp.com", {
   proxyReqOptDecorator: function proxyReqOptDecorator(opts) {
     opts.headers["x-forwarded-host"] = "localhost:3000";
