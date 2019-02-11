@@ -11,7 +11,7 @@ const app = express();
 //Options specific to this api, Google Oauth flow
 app.use(
   "/api",
-  proxy("http://react-srr-api.herokuapp.com", {
+  proxy("http://react-ssr-api.herokuapp.com", {
     proxyReqOptDecorator(opts) {
       opts.headers["x-forwarded-host"] = "localhost:3000";
       return opts;
