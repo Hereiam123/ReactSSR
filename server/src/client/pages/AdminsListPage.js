@@ -18,7 +18,7 @@ class AdminsList extends Component {
     return (
       <div>
         <h3>Here's the admin list: This is Protected!</h3>
-        <h2>Must login to see list of admins</h2>
+        <h1>Must be logged in to see list of admins</h1>
         <ul>{this.renderAdminsList()}</ul>
       </div>
     );
