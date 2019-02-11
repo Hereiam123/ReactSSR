@@ -664,8 +664,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Header = function Header(_ref) {
   var auth = _ref.auth;
 
-  console.log(auth);
-
   var authButton = auth ? _react2.default.createElement(
     "a",
     { href: "/api/logout" },
