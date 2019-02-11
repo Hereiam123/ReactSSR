@@ -16,7 +16,8 @@ class AdminsList extends Component {
   render() {
     return (
       <div>
-        Here's the admin list: This is Protected!
+        <h3>Here's the admin list: This is Protected!</h3>
+        <h2>Must login to see list of admins</h2>
         <ul>{this.renderAdminsList()}</ul>
       </div>
     );
@@ -28,7 +29,7 @@ const mapStateToProps = ({ admins }) => {
 };
 
 export default {
-  loadData: ({ dispatch }) => dispatch(fetchAdmins),
+  loadData: ({ dispatch }) => dispatch(fetchAdmins()),
   component: connect(
     mapStateToProps,
     { fetchAdmins }
