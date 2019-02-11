@@ -39533,7 +39533,12 @@ var App = function App(_ref) {
   return _react2.default.createElement(
     "div",
     null,
-    (0, _reactRouterConfig.renderRoutes)(route)
+    _react2.default.createElement(
+      "h1",
+      null,
+      "I'm heading here!"
+    ),
+    (0, _reactRouterConfig.renderRoutes)(route.routes)
   );
 };
 
