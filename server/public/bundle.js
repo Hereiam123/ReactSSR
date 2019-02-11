@@ -37818,6 +37818,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var FETCH_USERS = exports.FETCH_USERS = "FETCH_USERS";
+var FETCH_CURRENT_USER = exports.FETCH_CURRENT_USER = "FETCH_CURRENT_USER";
 
 /***/ }),
 /* 458 */
@@ -38595,7 +38596,7 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.fetchUsers = undefined;
+exports.fetchCurrentUser = exports.fetchUsers = undefined;
 
 var _types = __webpack_require__(457);
 
@@ -38630,6 +38631,39 @@ var fetchUsers = exports.fetchUsers = function fetchUsers() {
 
     return function (_x, _x2, _x3) {
       return _ref.apply(this, arguments);
+    };
+  }();
+};
+
+var fetchCurrentUser = exports.fetchCurrentUser = function fetchCurrentUser() {
+  return function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(dispatch, getState, api) {
+      var res;
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return api.get("/current_user");
+
+            case 2:
+              res = _context2.sent;
+
+              dispatch({
+                type: _types.FETCH_CURRENT_USER,
+                payload: res
+              });
+
+            case 4:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, undefined);
+    }));
+
+    return function (_x4, _x5, _x6) {
+      return _ref2.apply(this, arguments);
     };
   }();
 };
