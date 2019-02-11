@@ -215,15 +215,22 @@ var Home = function Home() {
     null,
     _react2.default.createElement(
       "div",
-      null,
-      "I'm home Charles!!!"
-    ),
-    _react2.default.createElement(
-      "button",
-      { onClick: function onClick() {
-          return console.log("Hello there");
-        } },
-      "Press Me"
+      { className: "center-align", style: { marginTop: "200px" } },
+      _react2.default.createElement(
+        "h3",
+        null,
+        "Welcome"
+      ),
+      _react2.default.createElement(
+        "h4",
+        null,
+        "I'm home Charles!!!"
+      ),
+      _react2.default.createElement(
+        "p",
+        null,
+        "React SSR Example"
+      )
     )
   );
 };
@@ -279,7 +286,7 @@ exports.default = function (req, store) {
       )
     )
   ));
-  return "\n    <html>\n        <head></head>\n        <body>\n            <div id='root'>" + content + "</div>\n            <script>window.INITIAL_STATE=" + (0, _serializeJavascript2.default)(store.getState()) + "</script>\n            <script src='bundle.js'></script>\n        </body>\n    </html>\n  ";
+  return "\n    <html>\n        <head>\n          <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css\">\n        </head>\n        <body>\n            <div id='root'>" + content + "</div>\n            <script>window.INITIAL_STATE=" + (0, _serializeJavascript2.default)(store.getState()) + "</script>\n            <script src='bundle.js'></script>\n        </body>\n    </html>\n  ";
 };
 
 /***/ }),
@@ -676,27 +683,43 @@ var Header = function Header(_ref) {
   );
 
   return _react2.default.createElement(
-    "div",
+    "nav",
     null,
     _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: "/" },
-      "React SSR"
-    ),
-    _react2.default.createElement(
       "div",
-      null,
+      { className: "nav-wrapper" },
       _react2.default.createElement(
         _reactRouterDom.Link,
-        { to: "/users" },
-        "Users"
+        { to: "/", className: "brand-logo" },
+        "React SSR"
       ),
       _react2.default.createElement(
-        _reactRouterDom.Link,
-        { to: "/admins" },
-        "Admins"
-      ),
-      authButton
+        "ul",
+        { className: "right" },
+        _react2.default.createElement(
+          "li",
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: "/users" },
+            "Users"
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: "/admins" },
+            "Admins"
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          null,
+          authButton
+        )
+      )
     )
   );
 };

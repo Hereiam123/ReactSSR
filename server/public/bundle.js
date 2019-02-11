@@ -37741,15 +37741,22 @@ var Home = function Home() {
     null,
     _react2.default.createElement(
       "div",
-      null,
-      "I'm home Charles!!!"
-    ),
-    _react2.default.createElement(
-      "button",
-      { onClick: function onClick() {
-          return console.log("Hello there");
-        } },
-      "Press Me"
+      { className: "center-align", style: { marginTop: "200px" } },
+      _react2.default.createElement(
+        "h3",
+        null,
+        "Welcome"
+      ),
+      _react2.default.createElement(
+        "h4",
+        null,
+        "I'm home Charles!!!"
+      ),
+      _react2.default.createElement(
+        "p",
+        null,
+        "React SSR Example"
+      )
     )
   );
 };
@@ -39626,27 +39633,43 @@ var Header = function Header(_ref) {
   );
 
   return _react2.default.createElement(
-    "div",
+    "nav",
     null,
     _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: "/" },
-      "React SSR"
-    ),
-    _react2.default.createElement(
       "div",
-      null,
+      { className: "nav-wrapper" },
       _react2.default.createElement(
         _reactRouterDom.Link,
-        { to: "/users" },
-        "Users"
+        { to: "/", className: "brand-logo" },
+        "React SSR"
       ),
       _react2.default.createElement(
-        _reactRouterDom.Link,
-        { to: "/admins" },
-        "Admins"
-      ),
-      authButton
+        "ul",
+        { className: "right" },
+        _react2.default.createElement(
+          "li",
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: "/users" },
+            "Users"
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: "/admins" },
+            "Admins"
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          null,
+          authButton
+        )
+      )
     )
   );
 };
